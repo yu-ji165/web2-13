@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>初めてのデータ保存</title>
+  </head>
+  <script type="text/javascript" src="ncmb.min.js" charset="utf-8"></script>
+  <script>
+  //mobile backendアプリとの連携
+  var ncmb = new NCMB("4ec4033eca834bec959cdd0c8e2ba1c56e758bbb9c290a70585f9884ef9eab4a","2a324c8b3f7fb999ee5ee364675d76b73e9f5ec8566d1f33b1f3d37e256c69ed");
+  
+  //クラスのTestClassを作成
+  var TestClass = ncmb.DataStore("TestClass");
+  //データストアへの登録
+  var testClass = new TestClass();
+  testClass.set("message", "こんにちは, NCMB!");
+  testClass.save()
+    .then(function(){
+    //成功時
+    })
+    .catch(function(err){
+    //失敗時
+    });
+  </script>
+</html>
